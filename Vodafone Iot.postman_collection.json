@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "6d22b1b0-988c-4203-8952-e2f37c73eccf",
+		"name": "Vodafone Iot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "load-data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filepath\":\"C:\\\\Users\\\\Akshay\\\\Desktop\\\\data.csv\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/iot/event/v1/load-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"iot",
+						"event",
+						"v1",
+						"load-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/iot/event/v1/status?ProductId=WG111556381&tstmp=1582605197000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"iot",
+						"event",
+						"v1",
+						"status"
+					],
+					"query": [
+						{
+							"key": "ProductId",
+							"value": "WG111556381"
+						},
+						{
+							"key": "tstmp",
+							"value": "1582605197000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
