@@ -43,7 +43,7 @@ public class IotController {
 	@PostMapping(value = "/load-data", produces = "application/json")
 	public ResponseEntity<IotResponse> loadData(@RequestBody IotPayload payload) throws Exception {
 
-		if (null != payload.getFilepath() && !payload.getFilepath().isBlank()) {
+		if (null != payload.getFilepath() && 0!=payload.getFilepath().length()) {
 
 			log.info("processing for filepath: " + payload.getFilepath());
 			iotService.processData(payload.getFilepath());

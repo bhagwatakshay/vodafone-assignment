@@ -46,9 +46,20 @@ class IotControllerTest {
 	}
 
 	@Test
-	void testLoadDataException() {
+	void testLoadDataExceptionFilePathEmpty() {
 		IotPayload payload = new IotPayload();
 		payload.setFilepath("");
+		try {
+			assertThrows(InvalidFilePathException.class, () -> iotController.loadData(payload));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	void testLoadDataExceptionFilePathNull() {
+		IotPayload payload = new IotPayload();
+		payload.setFilepath(null);
 		try {
 			assertThrows(InvalidFilePathException.class, () -> iotController.loadData(payload));
 		} catch (Exception e) {

@@ -188,7 +188,7 @@ public class IotService {
 	}
 
 	private boolean isAvailable(String location) {
-		return (null != location && !location.isBlank());
+		return (null != location && 0!=location.length());
 	}
 
 	private String getFormattedDateTime(Long dateTime) {
